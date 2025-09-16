@@ -25,9 +25,7 @@ export default function AuditoriumDetails({ userId }) {
       try {
         setLoading(true);
         const token = localStorage.getItem("token");
-        const { data } = await userApi.get(`/user/auditorium/get/${id}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const { data } = await userApi.get(`/user/auditorium/get/${id}`);
         setAuditorium(data);
       } catch (err) {
         setError("Failed to fetch auditorium details.");
@@ -70,9 +68,7 @@ export default function AuditoriumDetails({ userId }) {
 
     try {
       const token = localStorage.getItem("token");
-      await userApi.post("/user/bookings/create", bookingDTO, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await userApi.post("/user/bookings/create", bookingDTO);
       toast.success(`Booking confirmed for ${auditorium.name}!`);
       setShowConfirm(false);
       setShowModal(false);

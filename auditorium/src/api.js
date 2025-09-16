@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 export const authApi = axios.create({
-  baseURL: 'http://localhost:8090/api/v1/auth', // match your Spring Boot port
+  baseURL: 'https://auditorium-backend-springboot-1.onrender.com/api/v1/auth', // match your Spring Boot port
   withCredentials: true,
 });
 
 
 export const userApi = axios.create({
-  baseURL: "http://localhost:8090",
+  baseURL: "https://auditorium-backend-springboot-1.onrender.com/",
   withCredentials: true,
 });
 
@@ -25,7 +25,7 @@ userApi.interceptors.request.use(
 
 
 export const adminApi = axios.create({
-  baseURL: "http://localhost:8090/admin",
+  baseURL: "https://auditorium-backend-springboot-1.onrender.com/admin",
   withCredentials: true,
 });
 
